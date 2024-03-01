@@ -4,7 +4,7 @@ import { Logger } from '@nestjs/common';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    logger: new Logger(),
+    logger: ['error', 'warn', 'log', 'debug', 'verbose'],
   });
   await app.listen(3000);
   Logger.log(`Application is running on: ${await app.getUrl()}`);
