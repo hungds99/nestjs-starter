@@ -24,7 +24,9 @@ export class AppController {
     this.logger.log(`Get user ID #${id}`);
     try {
       const user = rawUsers.find((u) => u.id === parseInt(id));
-      if (!user) throw new Error('User not found');
+      if (!user) {
+        throw new Error('User not found');
+      }
       this.logger.log(`Get user ID #${id} successfully: `, user);
       return user;
     } catch (error) {
